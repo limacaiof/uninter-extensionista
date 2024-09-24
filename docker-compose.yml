@@ -5,10 +5,10 @@ services:
     environment:
       MARIADB_ALLOW_EMPTY_PASSWORD: 1
       MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 1
-      MARIADB_ROOT_PASSWORD: ${DATABASE_PASS:-root}
+      MARIADB_ROOT_PASSWORD: "root"
       MARIADB_DATABASE: ${DATABASE_NAME:-prato_solidario}
       MARIADB_USER: ${DATABASE_USER:-user}
-      MARIADB_PASSWORD: ${DATABASE_PASS}
+      MARIADB_PASSWORD: ${DATABASE_PASS:-pass}
     healthcheck:
       test: [ "CMD", "healthcheck.sh", "--connect", "--innodb_initialized" ]
       start_period: 5s
@@ -20,10 +20,11 @@ services:
     restart: always
   app:
     build: .
-    restart: always
+    tty: true
     container_name: app-prato-solidario
     working_dir: /app
-    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
     environment:
       DATABASE_HOST: ${DATABASE_HOST}
       DATABASE_PORT: ${DATABASE_PORT}
