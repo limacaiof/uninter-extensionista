@@ -21,13 +21,17 @@ Prato Solidário is a web platform designed to manage and promote social actions
 
 ### Docker
 
-1. Run the Docker compose command to build and run the project and the database:
+1. Run the Docker compose command to build the project and the database:
    ```bash
    docker compose up
    ```
-1. After the website is up, we need to run the migrations to setup the project database structure:
+1. Run the migrations to setup the project database structure:
     ```bash
     docker exec -it app-prato-solidario python manage.py migrate
+    ```
+2. Start the development server:
+    ```bash
+    docker exec -it app-prato-solidario python manage.py runserver 0.0.0.0:8000
     ```
 ### Virtual Environment
 
