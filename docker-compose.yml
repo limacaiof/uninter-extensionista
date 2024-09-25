@@ -2,6 +2,8 @@ services:
   db:
     image: mariadb:latest
     container_name: db-prato-solidario
+    volumes:
+      - ./docker/database:/var/lib/mysql
     environment:
       MARIADB_ALLOW_EMPTY_PASSWORD: 1
       MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 1
@@ -19,7 +21,9 @@ services:
       - ${DATABASE_PORT:-3306}:3306
     restart: always
   app:
-    build: .
+    build:
+      dockerfile: docker/app/Dockerfile
+      context: .
     tty: true
     container_name: app-prato-solidario
     working_dir: /app
