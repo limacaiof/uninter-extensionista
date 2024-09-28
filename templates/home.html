@@ -27,42 +27,7 @@
     <div class="text-center mt-5">
       <h2 class="h4">Participe Você Também!</h2>
       <p class="lead">Seja um voluntário. Desejar divulgar ou iniciar uma ação no combate a fome, cadastre agora mesmo sua campanha. Toda ajuda conta!</p>
-      <a href="#" class="btn btn-success btn-lg">Quero divulgar uma ação social</a>
-    </div>
-    <div class="mt-5">
-      {{ form.media }}
-      <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <div class="form-group d-flex row">
-          <div class="col-md-6">
-            <label class="mb-2" for="c-title">Título</label>
-            {{ form.title }}
-          </div>
-          <div class="col-md-6">
-            <label class="mb-2" for="c-limit_date">Data limite para campanha</label>
-            {{ form.limit_date }}
-          </div>
-        </div>
-        <div class="form-group mt-4">
-          <div>
-            <label class="mb-2" for="c-description">Descrição</label>
-            {{ form.description }}
-          </div>
-        </div>
-        <div class="form-group mt-4">
-          <div>
-            <label class="mb-2" for="c-how_help">Como ajudar</label>
-            {{ form.how_help }}
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Criar Campanha</button>
-      </form>
+      <a href="{% url 'register' %}" class="btn btn-success btn-lg">Quero divulgar uma ação social</a>
     </div>
   </div>
-  <style>
-    .form-control:focus {
-      border-color: #fff;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #a7c566;
-    }
-  </style>
 {% endblock %}

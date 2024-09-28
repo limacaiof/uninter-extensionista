@@ -3,9 +3,7 @@ from django.http import HttpRequest
 
 
 def home(request: HttpRequest):
-    from campaign.forms import CampaignForm
-    form = CampaignForm()
-    return render(request, 'home.html', {'form': form})
+    return render(request, 'home.html')
 
 
 def about(request: HttpRequest):
