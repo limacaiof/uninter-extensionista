@@ -4,6 +4,30 @@ from bootstrap_datepicker_plus.widgets import DateTimePickerInput
 
 
 class CampaignForm(forms.ModelForm):
+    class Meta:
+        model = Campaign
+        fields = ["title", "description",
+                  "how_help", "image_path", "limit_date"]
+        labels = {
+            "title": "Título",
+            "description": "Descrição",
+            "image_path": "Selecione uma imagem",
+            "how_help": "Como ajudar",
+            "limit_date": "Data limite para campanha"
+        }
+        widgets = {
+            "limit_date": DateTimePickerInput(
+                attrs={
+                    "placeholder": "A campanha vai durar até...",
+                    "class": "form-control c-limit_date"
+                },
+                options={
+                    "locale": "pt-BR",
+                    "format": "DD/MM/YYYY"
+                }
+            )
+        }
+
     title = forms.CharField(
         label="Título",
         min_length=5,
@@ -46,28 +70,12 @@ class CampaignForm(forms.ModelForm):
     )
     image_path = forms.ImageField(
         label="Selecione uma imagem",
-        required=False
+        required=False,
+        widget=forms.ClearableFileInput(
+            attrs={
+                "id": "c-image",
+                "style": "display: none;",
+                "accept": "image/*"
+            }
+        )
     )
-
-    class Meta:
-        model = Campaign
-        fields = ["title", "description",
-                  "how_help", "image_path", "limit_date"]
-        labels = {
-            "title": "Título",
-            "description": "Descrição",
-            "image_path": "Selecione uma imagem",
-            "how_help": "Como ajudar",
-            "limit_date": "Data limite para campanha"
-        }
-        widgets = {
-            "limit_date": DateTimePickerInput(
-                attrs={
-                    "class": "form-control c-limit_date"
-                },
-                options={
-                    "locale": "pt-BR",
-                    "format": "DD/MM/YYYY"
-                }
-            )
-        }

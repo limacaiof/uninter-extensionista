@@ -73,7 +73,7 @@ def register(request: HttpRequest):
             messages.add_message(
                 request,
                 messages.SUCCESS,
-                "Campanha criada com sucesso, faremos o possível para que essa ação solidária chegue ao maior número de pessoas possível. Obrigado!"
+                "Campanha criada com sucesso, faremos o melhor para que essa ação solidária chegue ao maior número de pessoas possível. Obrigado!"
             )
             return redirect("home")
         except:
