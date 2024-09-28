@@ -1,16 +1,13 @@
 {% extends 'base.html' %}
-
 {% block title %}
   Prato Solidário
 {% endblock %}
-
 {% block content %}
   <div class="mt-5">
     <div class="text-center">
       <h1 class="display-4">Bem-vindo ao Prato Solidário</h1>
       <p class="lead">Juntos podemos combater a fome e levar esperança a quem mais precisa.</p>
     </div>
-
     <div class="row mt-5">
       <div class="col-md-6">
         <h2 class="h4">Nossa Missão</h2>
@@ -21,17 +18,51 @@
         <p class="text-justify">Almejamos ser referência nacional no combate à fome, com a criação de redes de apoio e solidariedade que envolvam não só a distribuição de alimentos, mas também a conscientização e o desenvolvimento de práticas sustentáveis para erradicar a pobreza e a insegurança alimentar.</p>
       </div>
     </div>
-
     <div class="row mt-5">
       <div class="col-md-12">
         <h2 class="h4">Como Funciona</h2>
         <p class="text-justify">O Prato Solidário funciona através de parcerias com doadores, ONGs e voluntários. Nós fazemos com que as campanhas e ações sociais cheguem a um maior número possível de pessoas, tanto comunidades carentes quanto colaboradores.</p>
       </div>
     </div>
-
     <div class="text-center mt-5">
       <h2 class="h4">Participe Você Também!</h2>
       <p class="lead">Seja um voluntário. Desejar divulgar ou iniciar uma ação no combate a fome, cadastre agora mesmo sua campanha. Toda ajuda conta!</p>
       <a href="#" class="btn btn-success btn-lg">Quero divulgar uma ação social</a>
     </div>
+    <div class="mt-5">
+      {{ form.media }}
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group d-flex row">
+          <div class="col-md-6">
+            <label class="mb-2" for="c-title">Título</label>
+            {{ form.title }}
+          </div>
+          <div class="col-md-6">
+            <label class="mb-2" for="c-limit_date">Data limite para campanha</label>
+            {{ form.limit_date }}
+          </div>
+        </div>
+        <div class="form-group mt-4">
+          <div>
+            <label class="mb-2" for="c-description">Descrição</label>
+            {{ form.description }}
+          </div>
+        </div>
+        <div class="form-group mt-4">
+          <div>
+            <label class="mb-2" for="c-how_help">Como ajudar</label>
+            {{ form.how_help }}
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Criar Campanha</button>
+      </form>
+    </div>
+  </div>
+  <style>
+    .form-control:focus {
+      border-color: #fff;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #a7c566;
+    }
+  </style>
 {% endblock %}
