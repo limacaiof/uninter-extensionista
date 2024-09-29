@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Q
 
 
 # Create your models here.
@@ -18,3 +19,10 @@ class Campaign(models.Model):
     limit_date = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def search_by_term(query: str):
+        return Campaign.objects.filter(
+            Q(title__icontains=query) |
+            Q(description__icontains=query) |
+            Q(how_help__icontains=query)
+        )

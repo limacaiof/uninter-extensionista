@@ -12,41 +12,39 @@
     {% endif %}
 
     <div class="row justify-content-center mt-5" style="gap: 25px;">
-      {% if not campaigns|length %}
-        <div class="alert alert-warning mt-3" role="alert">Não há campanhas para exibir no momento.</div>
-      {% else %}
-        {% for campaign in campaigns %}
-          <!-- Card -->
-          <div class="card" style="width: 20rem;">
-            <img class="card-img-top" src="{% static 'img/search-bar-background.jpg' %}" alt="Imagem de {{ campaign.titulo }}" />
-            <div class="card-body">
-              <h5 class="card-title text-truncate">{{ campaign.titulo }}</h5>
-              <p class="card-text" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">{{ campaign.descricao }}</p>
-              <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-{{ campaign.id }}">Detalhes</button>
-            </div>
+      {% for campaign in campaigns %}
+        <!-- Card -->
+        <div class="card" style="width: 20rem;">
+          <img class="card-img-top" src="{{ campaign.image_path.url }}" alt="Imagem de {{ campaign.titulo }}" />
+          <div class="card-body">
+            <h5 class="card-title text-truncate">{{ campaign.title }}</h5>
+            <p class="card-text" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">{{ campaign.description|truncatewords:50 }}</p>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-{{ campaign.id }}">Detalhes</button>
           </div>
-          <!-- Modal -->
-          <div class="modal fade" id="modal-{{ campaign.id }}" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 750px;">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <h2 class="mb-4">{{ campaign.titulo }}</h2>
-                  <h4>Descrição</h4>
-                  <p>{{ campaign.descricao }}</p>
-                  <h4>Como ajudar:</h4>
-                  <p>{{ campaign.como_ajudar }}</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="modal-{{ campaign.id }}" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 750px;">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h2 class="mb-4">{{ campaign.title }}</h2>
+                <h4>Descrição</h4>
+                <p>{{ campaign.description }}</p>
+                <h4>Como ajudar:</h4>
+                <p>{{ campaign.how_help }}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
               </div>
             </div>
           </div>
-        {% endfor %}
-      {% endif %}
+        </div>
+      {% empty %}
+        <div class="alert alert-warning mt-3" role="alert">Não há campanhas para exibir no momento.</div>
+      {% endfor %}
     </div>
   </div>
 {% endblock %}
