@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models import Q
+from django.utils import timezone
 
 
 # Create your models here.
@@ -24,5 +25,11 @@ class Campaign(models.Model):
         return Campaign.objects.filter(
             Q(title__icontains=query) |
             Q(description__icontains=query) |
-            Q(how_help__icontains=query)
-        )
+            Q(how_help__icontains=query),
+            limit_date__gte=timezone.now()
+        ).order_by('-votes', '-id')
+
+    def list_all():
+        return Campaign.objects.filter(
+            limit_date__gte=timezone.now()
+        ).order_by('-votes', '-id')

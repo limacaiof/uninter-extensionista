@@ -8,10 +8,7 @@ from .models import Campaign
 # Create your views here.
 def index(request: HttpRequest):
     query = request.GET.get("q")
-    if query:
-        result = Campaign.search_by_term(query)
-    else:
-        result = Campaign.objects.all()
+    result = Campaign.search_by_term(query) if query else Campaign.list_all()
 
     response = {
         "query": query,
