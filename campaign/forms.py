@@ -1,6 +1,7 @@
 from django import forms
 from .models import Campaign
 from bootstrap_datepicker_plus.widgets import DateTimePickerInput
+from captcha.fields import CaptchaField, CaptchaTextInput
 
 
 class CampaignForm(forms.ModelForm):
@@ -77,5 +78,16 @@ class CampaignForm(forms.ModelForm):
                 "style": "display: none;",
                 "accept": "image/*"
             }
+        )
+    )
+    captcha = CaptchaField(
+        error_messages={'invalid': 'CAPTCHA inválida, tente novamente.'},
+        widget=CaptchaTextInput(
+            attrs={
+                "id": "c-captcha",
+                "placeholder": "Insira os caracteres...",
+                "class": "form-control",
+                "style": "max-height: 41px"
+            },
         )
     )

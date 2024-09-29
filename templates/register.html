@@ -21,18 +21,6 @@
         </div>
       </div>
       <div class="form-group mt-4">
-        <div class="d-flex flex-column">
-          <label class="mb-2" for="c-image" style="max-width: 300px;">{{ form.image_path.label }}</label>
-          <div id="rowimage" class="d-flex flex-row">
-            <span class="fw-bold btn btn-primary text-white btn-file">
-              Selecionar
-              {{ form.image_path }}
-            </span>
-            <input type="text" id="filename" class="form-control" readonly />
-          </div>
-        </div>
-      </div>
-      <div class="form-group mt-4">
         <div>
           <label class="mb-2" for="c-description">Descrição</label>
           {{ form.description }}
@@ -42,6 +30,28 @@
         <div>
           <label class="mb-2" for="c-how_help">Como ajudar</label>
           {{ form.how_help }}
+        </div>
+      </div>
+      <div class="form-group mt-4">
+        <div class="form-group d-flex row">
+          <div class="col-md-6 mt-3">
+            <div class="d-flex flex-column">
+              <label class="mb-2" for="c-image" style="max-width: 300px;">{{ form.image_path.label }}</label>
+              <div id="rowimage" class="d-flex flex-row">
+                <span class="fw-bold btn btn-primary text-white btn-file">
+                  Selecionar
+                  {{ form.image_path }}
+                </span>
+                <input type="text" placeholder="Nenhuma imagem" id="filename" class="form-control" readonly />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mt-3 d-flex flex-column">
+            <label class="mb-2" for="c-captcha">Não sou um robô</label>
+            <div class="d-flex flex-row align-items-end">
+              {{ form.captcha }}
+            </div>
+          </div>
         </div>
       </div>
       <button type="submit" class="btn btn-success btn-lg mt-5">Criar Campanha</button>
@@ -69,8 +79,8 @@
     }
   </style>
   <script>
-    document.getElementById('rowimage').addEventListener("click", function() {
-        document.getElementById("c-image").click();
+    document.getElementById('rowimage').addEventListener('click', function () {
+      document.getElementById('c-image').click()
     })
     
     $(document).on('change', '.btn-file :file', function () {

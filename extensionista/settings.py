@@ -25,13 +25,15 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'db']
 # Application definition
 
 INSTALLED_APPS = [
+    'django.forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "bootstrap_datepicker_plus",
+    'bootstrap_datepicker_plus',
+    'captcha',
     'campaign'
 ]
 
@@ -134,3 +136,6 @@ MESSAGE_TAGS = {
     messages.WARNING: 'alert-warning',
     messages.ERROR: 'alert-danger',
 }
+
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.random_char_challenge'
+CAPTCHA_NOISE_FUNCTIONS = None

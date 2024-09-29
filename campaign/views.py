@@ -10,12 +10,10 @@ def index(request: HttpRequest):
     query = request.GET.get("q")
     result = Campaign.search_by_term(query) if query else Campaign.list_all()
 
-    response = {
+    return render(request, "campaigns.html", {
         "query": query,
         "campaigns": result
-    }
-
-    return render(request, "campaigns.html", response)
+    })
 
 
 def register(request: HttpRequest):

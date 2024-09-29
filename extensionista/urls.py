@@ -7,10 +7,11 @@ from . import views
 
 urlpatterns = [
     path('', view=views.home, name='home'),
+    path('admin/', admin.site.urls),
+    path('captcha/', include('captcha.urls')),
     path('campanhas/', include("campaign.urls")),
     path('sobre', view=views.about, name='about'),
-    path('admin/', admin.site.urls),
-    
+
 ]
 
 if settings.DEBUG:
