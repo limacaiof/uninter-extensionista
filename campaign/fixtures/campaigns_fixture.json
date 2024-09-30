@@ -1,0 +1,142 @@
+[
+    {
+        "model": "campaign.campaign",
+        "pk": 1,
+        "fields": {
+            "title": "Campanha de Arrecadação de Alimentos",
+            "description": "Estamos realizando uma campanha para arrecadar alimentos não perecíveis que serão distribuídos a famílias em situação de vulnerabilidade. Este projeto visa combater a fome e proporcionar refeições dignas para aqueles que enfrentam dificuldades. Sua contribuição pode fazer a diferença na vida de muitas pessoas.",
+            "image_path": "static/img/default/campaign-thumbnail.jpg",
+            "how_help": "Doe alimentos não perecíveis como arroz, feijão, macarrão e enlatados. Juntos, podemos garantir que mais famílias tenham acesso a uma alimentação saudável.",
+            "votes": 0,
+            "limit_date": "2024-11-30T23:59:59Z",
+            "created_at": "2024-09-29T01:00:00Z",
+            "updated_at": "2024-09-29T01:00:00Z"
+        }
+    },
+    {
+        "model": "campaign.campaign",
+        "pk": 2,
+        "fields": {
+            "title": "Almoço Solidário",
+            "description": "Organizamos um evento para a distribuição de almoços gratuitos para pessoas em situação de rua e comunidades carentes. Este projeto não apenas alimenta, mas também traz um pouco de dignidade e carinho para aqueles que estão em situações difíceis. Sua ajuda é fundamental para o sucesso deste evento.",
+            "image_path": "static/img/default/campaign-thumbnail.jpg",
+            "how_help": "Participe como voluntário ajudando na preparação e distribuição dos alimentos, ou faça uma doação para cobrir os custos dos ingredientes. Cada gesto conta!",
+            "votes": 0,
+            "limit_date": "2024-12-15T23:59:59Z",
+            "created_at": "2024-09-29T01:00:00Z",
+            "updated_at": "2024-09-29T01:00:00Z"
+        }
+    },
+    {
+        "model": "campaign.campaign",
+        "pk": 3,
+        "fields": {
+            "title": "Cesta Básica para Famílias",
+            "description": "Estamos arrecadando fundos para a distribuição de cestas básicas a famílias afetadas pela crise econômica. Com a inflação e o aumento dos preços, muitas famílias estão enfrentando dificuldades para colocar comida na mesa. Com a sua ajuda, podemos fornecer cestas com itens essenciais.",
+            "image_path": "static/img/default/campaign-thumbnail.jpg",
+            "how_help": "Doe cestas básicas ou contribua financeiramente para que possamos comprar os alimentos necessários. Sua ajuda é vital para fazer a diferença na vida dessas famílias.",
+            "votes": 0,
+            "limit_date": "2024-12-20T23:59:59Z",
+            "created_at": "2024-09-29T01:00:00Z",
+            "updated_at": "2024-09-29T01:00:00Z"
+        }
+    },
+    {
+        "model": "campaign.campaign",
+        "pk": 4,
+        "fields": {
+            "title": "Pão Solidário",
+            "description": "Essa campanha visa arrecadar pães e outros produtos de panificação para distribuição em comunidades carentes. O pão é um alimento básico e acessível, e queremos garantir que todos tenham acesso a ele. Cada doação ajuda a saciar a fome de quem mais precisa.",
+            "image_path": "static/img/default/campaign-thumbnail.jpg",
+            "how_help": "Doe pães frescos ou ajude na distribuição. Se você tem um negócio de panificação, sua contribuição pode ser especialmente valiosa!",
+            "votes": 0,
+            "limit_date": "2024-11-25T23:59:59Z",
+            "created_at": "2024-09-29T01:00:00Z",
+            "updated_at": "2024-09-29T01:00:00Z"
+        }
+    },
+    {
+        "model": "campaign.campaign",
+        "pk": 5,
+        "fields": {
+            "title": "Janta da Esperança",
+            "description": "Um evento especial para servir jantares gratuitos para pessoas em situação de vulnerabilidade. Este projeto é uma oportunidade de levar comida quente e amor para aqueles que muitas vezes são esquecidos pela sociedade. Estamos reunindo voluntários para fazer deste evento um grande sucesso.",
+            "image_path": "static/img/default/campaign-thumbnail.jpg",
+            "how_help": "Contribua com alimentos ou se junte a nós como voluntário na preparação e serviço das refeições. Sua ajuda é muito bem-vinda!",
+            "votes": 0,
+            "limit_date": "2024-12-10T23:59:59Z",
+            "created_at": "2024-09-29T01:00:00Z",
+            "updated_at": "2024-09-29T01:00:00Z"
+        }
+    },
+    {
+        "model": "campaign.campaign",
+        "pk": 6,
+        "fields": {
+            "title": "Refeições para Crianças",
+            "description": "Iniciativa para fornecer refeições saudáveis e nutritivas para crianças em situação de risco. Sabemos que uma alimentação adequada é fundamental para o desenvolvimento saudável das crianças. Com sua ajuda, podemos garantir que elas tenham acesso a alimentos de qualidade.",
+            "image_path": "static/img/default/campaign-thumbnail.jpg",
+            "how_help": "Doe alimentos saudáveis ou ajude na preparação das refeições. Cada refeição servida é um passo a mais para um futuro melhor para essas crianças.",
+            "votes": 0,
+            "limit_date": "2024-11-15T23:59:59Z",
+            "created_at": "2024-09-29T01:00:00Z",
+            "updated_at": "2024-09-29T01:00:00Z"
+        }
+    },
+    {
+        "model": "campaign.campaign",
+        "pk": 7,
+        "fields": {
+            "title": "Alimentos para Idosos",
+            "description": "Campanha dedicada à distribuição de alimentos para lares de idosos carentes. Muitos idosos enfrentam solidão e dificuldade em acessar alimentos adequados. Este projeto visa garantir que eles recebam os cuidados e a atenção que merecem.",
+            "image_path": "static/img/default/campaign-thumbnail.jpg",
+            "how_help": "Ajude doando alimentos ou participando das visitas aos lares. Sua presença e apoio podem fazer uma grande diferença na vida desses idosos.",
+            "votes": 0,
+            "limit_date": "2024-12-05T23:59:59Z",
+            "created_at": "2024-09-29T01:00:00Z",
+            "updated_at": "2024-09-29T01:00:00Z"
+        }
+    },
+    {
+        "model": "campaign.campaign",
+        "pk": 8,
+        "fields": {
+            "title": "Fome Zero",
+            "description": "Campanha para erradicar a fome na comunidade local. Nosso objetivo é conscientizar a população sobre a realidade da fome e mobilizar recursos para garantir que ninguém passe necessidade. A fome é um problema que podemos resolver juntos.",
+            "image_path": "static/img/default/campaign-thumbnail.jpg",
+            "how_help": "Contribua com alimentos, dinheiro ou ajude na divulgação da campanha. Juntos, podemos fazer a diferença!",
+            "votes": 0,
+            "limit_date": "2024-11-28T23:59:59Z",
+            "created_at": "2024-09-29T01:00:00Z",
+            "updated_at": "2024-09-29T01:00:00Z"
+        }
+    },
+    {
+        "model": "campaign.campaign",
+        "pk": 9,
+        "fields": {
+            "title": "Feira da Solidariedade",
+            "description": "Organização de uma feira onde as pessoas podem trocar alimentos e itens essenciais. Este evento visa promover a troca solidária e ajudar aqueles que estão passando por dificuldades. Todos podem trazer algo para contribuir.",
+            "image_path": "static/img/default/campaign-thumbnail.jpg",
+            "how_help": "Traga alimentos para troca ou ajude na organização do evento. A participação de todos é fundamental para o sucesso da feira.",
+            "votes": 0,
+            "limit_date": "2024-12-12T23:59:59Z",
+            "created_at": "2024-09-29T01:00:00Z",
+            "updated_at": "2024-09-29T01:00:00Z"
+        }
+    },
+    {
+        "model": "campaign.campaign",
+        "pk": 10,
+        "fields": {
+            "title": "Desafio da Alimentação",
+            "description": "Um desafio esportivo onde os participantes arrecadam alimentos através das inscrições e doações. O objetivo é promover a atividade física enquanto combatemos a fome na nossa comunidade.",
+            "image_path": "static/img/default/campaign-thumbnail.jpg",
+            "how_help": "Participe doando alimentos ou se inscrevendo nos eventos. A sua presença e participação são muito importantes!",
+            "votes": 0,
+            "limit_date": "2024-11-20T23:59:59Z",
+            "created_at": "2024-09-29T01:00:00Z",
+            "updated_at": "2024-09-29T01:00:00Z"
+        }
+    }
+]

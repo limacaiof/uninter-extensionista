@@ -13,7 +13,7 @@ class Campaign(models.Model):
     image_path = models.ImageField(
         upload_to='uploads/',
         blank=False,
-        default='static/img/default/campaign-thumbnail.jpg'
+        default='default/campaign-thumbnail.jpg'
     )
     how_help = models.TextField(max_length=500)
     votes = models.IntegerField(default=0)
