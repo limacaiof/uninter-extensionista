@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - name: Build the Docker image
-      run: docker compose up
+      run: cd ../../ && docker compose up
     - name: Run migrations
       run: docker exec -it app-prato-solidario python manage.py migrate
     - name: Start server
