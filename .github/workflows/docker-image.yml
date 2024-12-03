@@ -13,8 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Build the Docker image
-      uses: hoverkraft-tech/compose-action@v2.0.1
+    - uses: actions/checkout@v4
+    - name: Docker Compose Action
+      uses: hoverkraft-tech/compose-action@v2.0.2
+      with:
+        compose-file: "docker-compose.yml"
     - name: Run migrations
       run: docker exec -it app-prato-solidario python manage.py migrate
     - name: Start server
