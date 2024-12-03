@@ -1,0 +1,21 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Build the Docker image
+      run: docker compose up
+    - name: Run migrations
+      run: docker exec -it app-prato-solidario python manage.py migrate
+    - name: Start server
+      run: docker exec -it app-prato-solidario python manage.py runserver 0.0.0.0:8000
