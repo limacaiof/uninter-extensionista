@@ -19,6 +19,6 @@ jobs:
       with:
         compose-file: "docker-compose.yml"
     - name: Run migrations
-      run: docker exec -it app-prato-solidario python manage.py migrate
+      run: docker-compose exec -T app-prato-solidario python manage.py migrate
     - name: Start server
-      run: docker exec -it app-prato-solidario python manage.py runserver 0.0.0.0:8000
+      run: docker-compose exec -T app-prato-solidario python manage.py runserver 0.0.0.0:8000
